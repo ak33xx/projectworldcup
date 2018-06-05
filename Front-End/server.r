@@ -47,8 +47,8 @@ shinyServer(function(input, output) {
 
 	# Function to create a data frame from tweets
 
-	pos.words = scan('G:/Twitter-Sentiment-Analysis-R-Tutorials-master/Twitter-Sentiment-Analysis-R-Tutorials-master/positive-words.txt', what='character', comment.char=';')
-	neg.words = scan('G:/Twitter-Sentiment-Analysis-R-Tutorials-master/Twitter-Sentiment-Analysis-R-Tutorials-master/negative-words.txt', what='character', comment.char=';')
+	pos.words = scan('C:/Users/admin/Desktop/projectworldcup-master/positive-words.txt', what='character', comment.char=';')
+	neg.words = scan('C:/Users/admin/Desktop/projectworldcup-master/negative-words.txt', what='character', comment.char=';')
 
 	wordDatabase<-function()
 	{
@@ -263,5 +263,6 @@ shinyServer(function(input, output) {
 	p<- reactive ({ p = ggplot(dat2(), aes(x = tag, y = freq)) + geom_bar(stat="identity", fill = "blue")
 	p + coord_flip() + labs(title = "Hashtag frequencies in the tweets of the tweeter") })
 	output$tophashtagsplot <- renderPlot ({ p() })	
-}) #shiny server
+}) 
+#shiny server
 
